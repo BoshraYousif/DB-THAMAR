@@ -8,7 +8,7 @@ import 'package:path/path.dart';
 
 class MapG {
 
-  int MAP_ID;
+  static int MAP_ID;
   Text MAP_ADRESS;
   Double XAXIS;
   Double YAXIS;
@@ -227,4 +227,83 @@ class NotificationsTypeC {
   }
   class LinkNotifServOwnerC {
 
+   int Notifications_ID;
+   int Notifications_Type_ID;
+   int Services_owner_ID;
+
+   LinkNotifServOwnerC(this.Notifications_ID, this.Notifications_Type_ID,
+       this.Services_owner_ID);
+   var LinkNotifOwne = Map<String, dynamic>();
+
+   Map<String,dynamic> toMapLink()
+   {
+     LinkNotifOwne["Notifications_ID"] = this.Notifications_ID;
+     LinkNotifOwne["Notifications_Type_ID"] = this.Notifications_Type_ID;
+     LinkNotifOwne["Services_owner_ID"] = this.Services_owner_ID;
+     return LinkNotifOwne;
+   }
+   LinkNotifServOwnerC.getMap(Map<String, dynamic> map){
+
+     this.Notifications_ID  = LinkNotifOwne["Notifications_ID"];
+     this.Notifications_Type_ID =LinkNotifOwne["Notifications_Type_ID"] ;
+     this.Services_owner_ID =LinkNotifOwne["Services_owner_ID"] ;
+   }
+  }
+  class AdminC {
+
+    int Admin_ID;
+    Text Admin_Name;
+   int Admin_Phone;
+   var Admin_Mail;
+
+    AdminC(this.Admin_Name, this.Admin_Phone, this.Admin_Mail);
+
+    var Admain = Map<String, dynamic>();
+    Map<String,dynamic> toMapAdm()
+    {
+      Admain["Admin_ID"] = this.Admin_ID;
+      Admain["Admin_Name"] = this.Admin_Name;
+      Admain["Admin_Mail"] = this.Admin_Mail;
+      Admain["Admin_Phone"] = this.Admin_Phone;
+      return Admain;
+    }
+    AdminC.getMap(Map<String, dynamic> map){
+      this.Admin_ID = Admain["Admin_ID"] ;
+      this.Admin_Name = Admain["Admin_Name"];
+      this.Admin_Mail  =Admain["Admin_Mail"] ;
+      this.Admin_Phone  =Admain["Admin_Phone"] ;
+    }
+  }
+
+  class PROVIINCIALC
+  {
+   int COUNTRY_ID;
+    Text COUN_NAME;
+   int XAXIS;
+   int YAXIS;
+   Text Image;
+   Text COUNTRY_ADDRES;
+
+   PROVIINCIALC(this.COUN_NAME, this.XAXIS, this.YAXIS, this.Image,
+       this.COUNTRY_ADDRES);
+
+   var  PROVIINCIAL = Map<String, dynamic>();
+   Map<String,dynamic> toMapProvi()
+   {
+     PROVIINCIAL["COUNTRY_ID"] = this.COUNTRY_ID;
+     PROVIINCIAL["COUN_NAME"] = this.COUN_NAME;
+     PROVIINCIAL["XAXIS"] = this.XAXIS;
+     PROVIINCIAL["YAXIS"] = this.YAXIS;
+     PROVIINCIAL["Image"] = this.Image;
+     PROVIINCIAL["COUNTRY_ADDRES"] = this.COUNTRY_ADDRES;
+     return PROVIINCIAL;
+   }
+   PROVIINCIALC.getMap(Map<String, dynamic> map){
+     this.COUNTRY_ID =PROVIINCIAL["COUNTRY_ID"];
+     this.COUN_NAME  = PROVIINCIAL["COUN_NAME"];
+     this.XAXIS = PROVIINCIAL["XAXIS"];
+     this.YAXIS = PROVIINCIAL["YAXIS"];
+     this.Image = PROVIINCIAL["Image"] ;
+     this.COUNTRY_ADDRES = PROVIINCIAL["COUNTRY_ADDRES"];
+   }
   }
